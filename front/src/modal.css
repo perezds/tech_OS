@@ -1,0 +1,129 @@
+/* Estilização do fundo escuro ao abrir a modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  
+  /* Quando a modal estiver aberta */
+  .modal-overlay.fade-in {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Container da modal */
+  .modal-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  /* Animação ao abrir */
+  .modal-overlay.fade-in .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Inputs estilizados */
+  .modal-input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .modal-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Botões */
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .modal-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+  }
+  
+  .modal-button.primary {
+    background: #007bff;
+    color: white;
+  }
+  
+  .modal-button.primary:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .modal-button.secondary {
+    background: #6c757d;
+    color: white;
+  }
+  
+  .modal-button.secondary:hover {
+    background: #5a6268;
+    transform: scale(1.05);
+  }
+  
+  .modal-button.danger {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .modal-button.danger:hover {
+    background: #c82333;
+    transform: scale(1.05);
+  }
+  
+  /* Botão de fechar no canto superior */
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .close-button:hover {
+    color: #ff0000;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 500px) {
+    .modal-content {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+  
