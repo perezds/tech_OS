@@ -1,0 +1,66 @@
+.patrimonios-page {
+    background-color: #fefcf9;
+    min-height: 100vh;
+    padding-top: 120px;
+  }
+  
+  .patrimonios-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .patrimonios-box {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* bem mais leve */
+    margin-bottom: 40px;
+  }
+  .patrimonios-box h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #4b2505;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .patrimonios-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #eaf1ff; /* igual ao login */
+    font-size: 15px;
+  }
+  
+  .patrimonios-box button {
+    background-color: #8b3f00;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .patrimonios-box button:hover {
+    background-color: #5a2d00;
+  }
+  
+  .patrimonios-list {
+    box-shadow: none;
+    padding: 0;
+    background: none;
+  }
+  .patrimonio-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  

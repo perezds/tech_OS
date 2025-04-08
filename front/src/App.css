@@ -1,22 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+:root {
+  --primary-color: #0ff;
+  --secondary-color: #08f;
+  --bg-color: #0a0a0a;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --border-glow: 0 0 15px var(--primary-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #2e2e2e;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+html, body, #root {
+  height: 100%;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 2rem 80px;
+}
+
+/* === HEADER STYLES === */
+header {
+  background-color: blanchedalmond;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container_head {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Georgia', serif;
+}
+
+.logo a {
+  font-size: 28px;
+  font-weight: bold;
+  color: #8b4513;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #8b4513;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #ffdead;
+  color: #000;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons .signin,
+.auth-buttons .signup {
+  background-color: transparent;
+  border: 1px solid #8b4513;
+  color: #8b4513;
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.auth-buttons .signup {
+  background-color: #8b4513;
+  color: white;
+}
+
+.auth-buttons .signin:hover,
+.auth-buttons .signup:hover {
+  background-color: #a0522d;
+  color: white;
+  border-color: #a0522d;
+}
+
+/* === OUTROS ESTILOS EXISTENTES === */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  background: var(--glass-bg);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease-in-out;
 }
 
 .logo {
   height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  margin: 1em;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+
 
 @keyframes logo-spin {
   from {
@@ -28,15 +150,32 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo.react {
     animation: logo-spin infinite 20s linear;
   }
 }
 
 .card {
-  padding: 2em;
+  background: var(--glass-bg);
+  padding: 2.5em;
+  margin-top: 2em;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--border-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px var(--primary-color);
 }
 
 .read-the-docs {
-  color: #888;
+  margin-top: 1.5em;
+  font-size: 1rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+.read-the-docs:hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color);
 }
