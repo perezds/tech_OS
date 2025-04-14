@@ -15,24 +15,29 @@ export default function Cadastro() {
 
   const cadastrar = async (e) => {
     e.preventDefault();
-
+  
     if (password !== confirmPassword) {
       alert("As senhas não coincidem!");
       return;
     }
-
+    
+    const userData = {
+      username,
+      email,
+      password,
+    };
+  
+    console.log("Enviando dados de cadastro:", userData);
+  
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/register/", {
-        username,
-        email,
-        password
-      });
+      const response = await axios.post("http://127.0.0.1:8000/api/create-user/", userData);
       console.log("Usuário cadastrado:", response.data);
       navigate("/signin");
     } catch (error) {
       console.error("Erro ao cadastrar:", error);
     }
   };
+
 
   return (
     <div>

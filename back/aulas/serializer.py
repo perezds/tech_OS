@@ -1,12 +1,7 @@
 from rest_framework import serializers
-from .models import (
-    Gestor,
-    Manutentor,
-    Responsavel,
-    Patrimonio,
-    Ambiente,
-    OrdemServico,
-)
+from django.contrib.auth.models import User
+from rest_framework import serializers
+from .models import *
 
 class GestorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -37,3 +32,21 @@ class OrdemServicoSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrdemServico
         fields = '__all__'
+
+# serializers.py
+
+
+class UserSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password']
+
+    def create(self, validated_data):
+        user = User.objects.create_user(
+            username=validated_data['username'],
+            email=validated_data['email'],
+            password=validated_data['password']
+        )
+        return user

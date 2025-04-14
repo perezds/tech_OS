@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../../components/header/header";
-import Footer from "../../components/footer/footer";
-import "./patrimonio.css"; // garante que esse CSS tá sendo importado
+import "./patrimonio.css"; 
 
 function Patrimonios() {
   const [patrimonios, setPatrimonios] = useState([]);
@@ -32,7 +30,6 @@ function Patrimonios() {
 
   return (
     <div className="patrimonios-page">
-      <Header />
       <div className="patrimonios-container">
         <div className="patrimonios-box">
           <h2>Patrimônios</h2>
@@ -71,9 +68,9 @@ function Patrimonios() {
           </div>
         )}
       </div>
-      <Footer />
+
     </div>
   );
 }
 
-export default Patrimonio;
+export default Patrimonios;

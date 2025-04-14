@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework import status, viewsets
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from django.contrib.auth import get_user_model
 from .models import (
     Gestor, Responsavel, Manutentor, Ambiente,
     Patrimonio, OrdemServico
 )
-from .serializer import (
-    GestorSerializer, ResponsavelSerializer, ManutentorSerializer,
-    AmbienteSerializer, PatrimonioSerializer, OrdemServicoSerializer
-)
+from .serializer import *
 
 class GestorView(ListCreateAPIView):
     queryset = Gestor.objects.all()
@@ -75,3 +76,13 @@ class OrdemServicoDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = OrdemServicoSerializer
     permission_classes = [IsAuthenticated]
 
+# views.py
+class UserRegistrationView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'message': 'Usuário criado com sucesso!'}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    "corsheaders",
     # Terceiros
     'rest_framework',
     'rest_framework_simplejwt',
@@ -25,9 +25,11 @@ INSTALLED_APPS = [
     # Apps do projeto
     'aulas',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Middlewares
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -36,6 +38,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 # URLs principais
 ROOT_URLCONF = 'aulas_extras.urls'
