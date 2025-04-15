@@ -65,7 +65,8 @@ class OrdemServico(models.Model):
     fechamento = models.DateTimeField(null=True, blank=True)
     status = models.CharField(max_length=15, choices=STATUS_CHOICES)
     prioridade = models.CharField(max_length=10, choices=PRIORIDADE_CHOICES)
-    
+    funcionario_nome = models.CharField(max_length=255)
+    funcionario_sn = models.CharField(max_length=20)
     patrimonio = models.ForeignKey(Patrimonio, on_delete=models.SET_NULL, null=True, blank=True)
     ambiente = models.ForeignKey(Ambiente, on_delete=models.PROTECT)
     manutentor = models.ForeignKey(Manutentor, on_delete=models.PROTECT)

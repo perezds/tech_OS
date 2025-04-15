@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import *
+from . import views
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -21,12 +22,13 @@ urlpatterns = [
     path('manutentores/<int:pk>', ManutentorDetailView.as_view()),
 
 
-    path('responsaveis', ResponsavelView.as_view()),
-    path('responsaveis/<int:pk>', ResponsavelDetailView.as_view()),
 
+    path('responsaveis/', ResponsavelView.as_view()),  
+    path('responsaveis/<int:pk>/', ResponsavelDetailView.as_view()),
+      # path('responsaveis/', ResponsavelList.as_view(), name='responsaveis-list'), 
 
-    path('patrimonios', PatrimonioView.as_view()),
-    path('patrimonios/<int:pk>', PatrimonioDetailView.as_view()),
+    path('patrimonios/', PatrimonioView.as_view()),
+    path('patrimonios/<int:pk>/', PatrimonioDetailView.as_view()),
 
 
     path('ambientes', AmbienteView.as_view()),

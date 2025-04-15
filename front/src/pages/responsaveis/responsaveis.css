@@ -1,0 +1,80 @@
+.responsaveis-page {
+    background-color: #0ecf7f;
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+.responsaveis-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #8b3f00;
+}
+
+.responsaveis-box {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+.responsaveis-box h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #4b2505;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.responsaveis-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #eaf1ff;
+    font-size: 15px;
+}
+
+.responsaveis-box button {
+    background-color: #8b3f00;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .responsaveis-box button:hover {
+    background-color: #5a2d00;
+  }
+  
+  .tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .tabela th, .tabela td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+  }
+  
+  .tabela th {
+    background-color: #eaf1ff;
+    color: #4b2505;
+    font-weight: bold;
+  }
+  
+  .tabela tr:hover {
+    background-color: #f5faff;
+  }
+  

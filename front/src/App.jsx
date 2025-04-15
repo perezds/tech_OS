@@ -6,28 +6,31 @@ import './App.css';
 import Login from './pages/login/login';
 import Cadastro from './pages/cadastro/cadastro';
 import Patrimonios from './pages/patrimonio/patrimonio';
+import Responsaveis from './pages/responsaveis';
 
-// Páginas simuladas
+
 const Home = () => <h2 className="content">Bem-vindo ao Sistema TechEdu</h2>;
 const Ordens = () => <h2 className="content">Lista de Ordens de Serviço</h2>;
 const SignUp = () => <h2 className="content">Página de Cadastro</h2>;
 
-// Componente que cuida da lógica do layout
+
 function LayoutWrapper() {
   const location = useLocation();
   const hideHeaderFooter = location.pathname === '/signin' || location.pathname === '/signup';
 
   return (
-    <div className="app-container">
+    <div>
       {!hideHeaderFooter && <Header />}
 
-      <main className="main-content">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/ordens" element={<Ordens />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Cadastro />} />
           <Route path="/patrimonios" element={<Patrimonios/>} />
+          <Route path="/responsaveis" element={<Responsaveis/>} />
+          
         </Routes>
       </main>
 
